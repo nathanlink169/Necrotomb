@@ -1,15 +1,17 @@
 ﻿using GameFramework;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerTriggerBoxActivator : BaseBehaviour
+public class TriggerBoxActivator : BaseBehaviour
 {
-    public TriggerBoxDelegate DelegateToCall = null;
-    public delegate void TriggerBoxDelegate(GameObject in_triggerBoxOwner);
+    public Collider Other;
+    public UnityEvent Delegate;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && DelegateToCall != null)
+        if (other.CompareTag("Player") && Delegate != null)
         {
-            DelegateToCall.Invoke(gameObject);
+            this.Other = other;
+            Delegate.Invoke();
         }
     }
 }
