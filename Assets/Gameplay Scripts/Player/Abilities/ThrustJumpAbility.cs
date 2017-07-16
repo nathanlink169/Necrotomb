@@ -11,6 +11,7 @@ public class ThrustJumpAbility : BaseBehaviour
         StartCoroutine(waitUntilUnlock());
     }
     #endregion
+
     #region Private
     private IEnumerator waitUntilUnlock()
     {
@@ -31,13 +32,14 @@ public class ThrustJumpAbility : BaseBehaviour
                 playersRigidbody.AddForce(playersRigidbody.transform.forward * THRUST_JUMP_POWER + Vector3.up, ForceMode.Impulse);
             }
 
-            yield return YieldFactory.GetWaitForSeconds(COOLDOWN);
+            yield return YieldFactory.GetWaitForSeconds(GPlayerManager.Instance.PlayerData.UpgradedThrustJump ? UPGRADED_COOLDOWN : COOLDOWN);
         }
         StartCoroutine(waitUntilUnlock());
     }
 
     private bool m_bIsUnlocked = false;
     private const float THRUST_JUMP_POWER = 40.0f;
-    private const float COOLDOWN = 0.25f;
+    private const float COOLDOWN = 1.0f;
+    private const float UPGRADED_COOLDOWN = 0.25f;
     #endregion
 }
