@@ -2,6 +2,7 @@
 using UnityEngine;
 using GameFramework;
 
+//TODO: Refactor
 public class WeaponManager : BaseBehaviour
 {
     #region Public Variables
@@ -9,7 +10,16 @@ public class WeaponManager : BaseBehaviour
     public int CurrentSelectedWeapon
     {
         get { return m_iCurrentSelectedWeapon; }
-        set { m_iPreviousSelectedWeapon = m_iCurrentSelectedWeapon; m_iCurrentSelectedWeapon = value; }
+        set
+        {
+            m_iPreviousSelectedWeapon = m_iCurrentSelectedWeapon;
+            m_iCurrentSelectedWeapon = value;
+
+            for (int i = 0; i < Weapons.Count; i++)
+            {
+                m_WeaponObjects[i].SetActive(i == value);
+            }
+        }
     }
     public IWeapon CurrentWeapon { get { return Weapons[CurrentSelectedWeapon]; } }
     #endregion
@@ -21,6 +31,8 @@ public class WeaponManager : BaseBehaviour
         {
             Weapons.Add(m_WeaponObjects[i].GetComponent<IWeapon>());
         }
+
+        CurrentSelectedWeapon = 0;
     }
 
     void Update()
@@ -32,7 +44,7 @@ public class WeaponManager : BaseBehaviour
         {
             int iCurrentWeapon = CurrentSelectedWeapon;
             checkNumberKeys(ref iCurrentWeapon);
-            checkMouseWheel(ref iCurrentWeapon);
+            //checkMouseWheel(ref iCurrentWeapon);
 
             if (iCurrentWeapon != CurrentSelectedWeapon)
             {
@@ -47,14 +59,14 @@ public class WeaponManager : BaseBehaviour
     #region Private Functions
     private void checkNumberKeys(ref int out_iWeaponValue)
     {
-        int iWeaponToSelect = CurrentSelectedWeapon;
-        checkForKey(KeyCode.Alpha1, ref iWeaponToSelect, 0);
-        checkForKey(KeyCode.Alpha2, ref iWeaponToSelect, 1);
-        checkForKey(KeyCode.Alpha3, ref iWeaponToSelect, 2);
-        checkForKey(KeyCode.Alpha4, ref iWeaponToSelect, 3);
-        checkForKey(KeyCode.Alpha5, ref iWeaponToSelect, 4);
+        checkForKey(KeyCode.Alpha1, ref out_iWeaponValue, 0);
+        checkForKey(KeyCode.Alpha2, ref out_iWeaponValue, 1);
+        checkForKey(KeyCode.Alpha3, ref out_iWeaponValue, 2);
+        checkForKey(KeyCode.Alpha4, ref out_iWeaponValue, 3);
+        checkForKey(KeyCode.Alpha5, ref out_iWeaponValue, 4);
     }
 
+    // TODO: Make this work
     private void checkMouseWheel(ref int out_iWeaponValue)
     {
         float delta = Mathf.Clamp01(Input.GetAxis("Mouse ScrollWheel"));

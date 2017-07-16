@@ -49,7 +49,8 @@ public class REIWeapon : BaseBehaviour, IWeapon
 
     public bool GetIsUnlocked()
     {
-        return GPlayerManager.Instance.PlayerData.UnlockedREI;
+        //return GPlayerManager.Instance.PlayerData.UnlockedREI;
+        return true;
     }
 
     public void OnMainFireContinue() { }
