@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroidvania 3.Plugins", "Metroidvania 3.Plugins.csproj", "{084D0811-AF3E-7A33-BFA3-681BCBE63D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroidvania 3", "Metroidvania 3.csproj", "{95C9EC28-5FBE-C362-E122-CDEF8179C1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroidvania 3.Editor.Plugins", "Metroidvania 3.Editor.Plugins.csproj", "{EB48E3CF-59D1-3D40-7782-35864FD97EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{084D0811-AF3E-7A33-BFA3-681BCBE63D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084D0811-AF3E-7A33-BFA3-681BCBE63D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084D0811-AF3E-7A33-BFA3-681BCBE63D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084D0811-AF3E-7A33-BFA3-681BCBE63D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C9EC28-5FBE-C362-E122-CDEF8179C1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C9EC28-5FBE-C362-E122-CDEF8179C1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C9EC28-5FBE-C362-E122-CDEF8179C1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C9EC28-5FBE-C362-E122-CDEF8179C1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB48E3CF-59D1-3D40-7782-35864FD97EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB48E3CF-59D1-3D40-7782-35864FD97EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB48E3CF-59D1-3D40-7782-35864FD97EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB48E3CF-59D1-3D40-7782-35864FD97EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

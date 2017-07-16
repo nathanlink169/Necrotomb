@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 8e8c6c6fc06d5a546b52cd1b58a43751
+timeCreated: 1497826183
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MainLevel_Room1
+    100004: MainLevel_Room10
+    100006: MainLevel_Room10_EntrancePlatform
+    100008: MainLevel_Room10_Staircase
+    100010: MainLevel_Room11
+    100012: MainLevel_Room11_Stairs
+    100014: MainLevel_Room11_UpgradePlatform
+    100016: MainLevel_Room12
+    100018: MainLevel_Room13
+    100020: MainLevel_Room14
+    100022: MainLevel_Room14_StartingPlatform
+    100024: MainLevel_Room14_ToArea3_Platform1
+    100026: MainLevel_Room14_ToArea3_Platform2
+    100028: MainLevel_Room14_Upgrade1_Platform1
+    100030: MainLevel_Room14_Upgrade1_Platform2
+    100032: MainLevel_Room14_Upgrade2
+    100034: MainLevel_Room2
+    100036: MainLevel_Room3
+    100038: MainLevel_Room4
+    100040: MainLevel_Room5
+    100042: MainLevel_Room5_Stairs
+    100044: MainLevel_Room6
+    100046: MainLevel_Room6_Stairs
+    100048: MainLevel_Room7
+    100050: MainLevel_Room8
+    100052: MainLevel_Room8_OpeningPlatform
+    100054: MainLevel_Room8_UpgradePlatform
+    100056: MainLevel_Room9
+    400000: //RootNode
+    400002: MainLevel_Room1
+    400004: MainLevel_Room10
+    400006: MainLevel_Room10_EntrancePlatform
+    400008: MainLevel_Room10_Staircase
+    400010: MainLevel_Room11
+    400012: MainLevel_Room11_Stairs
+    400014: MainLevel_Room11_UpgradePlatform
+    400016: MainLevel_Room12
+    400018: MainLevel_Room13
+    400020: MainLevel_Room14
+    400022: MainLevel_Room14_StartingPlatform
+    400024: MainLevel_Room14_ToArea3_Platform1
+    400026: MainLevel_Room14_ToArea3_Platform2
+    400028: MainLevel_Room14_Upgrade1_Platform1
+    400030: MainLevel_Room14_Upgrade1_Platform2
+    400032: MainLevel_Room14_Upgrade2
+    400034: MainLevel_Room2
+    400036: MainLevel_Room3
+    400038: MainLevel_Room4
+    400040: MainLevel_Room5
+    400042: MainLevel_Room5_Stairs
+    400044: MainLevel_Room6
+    400046: MainLevel_Room6_Stairs
+    400048: MainLevel_Room7
+    400050: MainLevel_Room8
+    400052: MainLevel_Room8_OpeningPlatform
+    400054: MainLevel_Room8_UpgradePlatform
+    400056: MainLevel_Room9
+    2300000: MainLevel_Room1
+    2300002: MainLevel_Room10
+    2300004: MainLevel_Room10_EntrancePlatform
+    2300006: MainLevel_Room10_Staircase
+    2300008: MainLevel_Room11
+    2300010: MainLevel_Room11_Stairs
+    2300012: MainLevel_Room11_UpgradePlatform
+    2300014: MainLevel_Room12
+    2300016: MainLevel_Room13
+    2300018: MainLevel_Room14
+    2300020: MainLevel_Room14_StartingPlatform
+    2300022: MainLevel_Room14_ToArea3_Platform1
+    2300024: MainLevel_Room14_ToArea3_Platform2
+    2300026: MainLevel_Room14_Upgrade1_Platform1
+    2300028: MainLevel_Room14_Upgrade1_Platform2
+    2300030: MainLevel_Room14_Upgrade2
+    2300032: MainLevel_Room2
+    2300034: MainLevel_Room3
+    2300036: MainLevel_Room4
+    2300038: MainLevel_Room5
+    2300040: MainLevel_Room5_Stairs
+    2300042: MainLevel_Room6
+    2300044: MainLevel_Room6_Stairs
+    2300046: MainLevel_Room7
+    2300048: MainLevel_Room8
+    2300050: MainLevel_Room8_OpeningPlatform
+    2300052: MainLevel_Room8_UpgradePlatform
+    2300054: MainLevel_Room9
+    3300000: MainLevel_Room1
+    3300002: MainLevel_Room10
+    3300004: MainLevel_Room10_EntrancePlatform
+    3300006: MainLevel_Room10_Staircase
+    3300008: MainLevel_Room11
+    3300010: MainLevel_Room11_Stairs
+    3300012: MainLevel_Room11_UpgradePlatform
+    3300014: MainLevel_Room12
+    3300016: MainLevel_Room13
+    3300018: MainLevel_Room14
+    3300020: MainLevel_Room14_StartingPlatform
+    3300022: MainLevel_Room14_ToArea3_Platform1
+    3300024: MainLevel_Room14_ToArea3_Platform2
+    3300026: MainLevel_Room14_Upgrade1_Platform1
+    3300028: MainLevel_Room14_Upgrade1_Platform2
+    3300030: MainLevel_Room14_Upgrade2
+    3300032: MainLevel_Room2
+    3300034: MainLevel_Room3
+    3300036: MainLevel_Room4
+    3300038: MainLevel_Room5
+    3300040: MainLevel_Room5_Stairs
+    3300042: MainLevel_Room6
+    3300044: MainLevel_Room6_Stairs
+    3300046: MainLevel_Room7
+    3300048: MainLevel_Room8
+    3300050: MainLevel_Room8_OpeningPlatform
+    3300052: MainLevel_Room8_UpgradePlatform
+    3300054: MainLevel_Room9
+    4300000: MainLevel_Room1
+    4300002: MainLevel_Room2
+    4300004: MainLevel_Room3
+    4300006: MainLevel_Room4
+    4300008: MainLevel_Room6
+    4300010: MainLevel_Room6_Stairs
+    4300012: MainLevel_Room7
+    4300014: MainLevel_Room5
+    4300016: MainLevel_Room5_Stairs
+    4300018: MainLevel_Room9
+    4300020: MainLevel_Room10
+    4300022: MainLevel_Room10_Staircase
+    4300024: MainLevel_Room10_EntrancePlatform
+    4300026: MainLevel_Room8
+    4300028: MainLevel_Room8_OpeningPlatform
+    4300030: MainLevel_Room8_UpgradePlatform
+    4300032: MainLevel_Room11
+    4300034: MainLevel_Room11_UpgradePlatform
+    4300036: MainLevel_Room11_Stairs
+    4300038: MainLevel_Room12
+    4300040: MainLevel_Room13
+    4300042: MainLevel_Room14
+    4300044: MainLevel_Room14_Upgrade2
+    4300046: MainLevel_Room14_Upgrade1_Platform2
+    4300048: MainLevel_Room14_Upgrade1_Platform1
+    4300050: MainLevel_Room14_ToArea3_Platform2
+    4300052: MainLevel_Room14_ToArea3_Platform1
+    4300054: MainLevel_Room14_StartingPlatform
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
