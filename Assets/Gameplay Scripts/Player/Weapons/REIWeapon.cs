@@ -34,7 +34,12 @@ public class REIWeapon : BaseBehaviour, IWeapon
 
     public void OnAltFireBegin()
     {
+        for (int i = 0; i < m_projectiles.Count; i++)
+        {
+            m_projectiles[i].Explode();
+        }
 
+        m_projectiles.Clear();
     }
 
     public void OnAltFireContinue()
