@@ -9,6 +9,9 @@ public class PauseSubState : BaseSubState
 
     protected override void Start()
     {
+        // TODO: remove - This is a test to save the current SaveData when the game is paused.
+        //GSaveManager.Save(GPlayerManager.Instance.PlayerData);
+
         GCore.Instance.SetCursorLockmode(false);
         _stateInfo = new StateInfo(STATE_NAME, this);
         base.Start();

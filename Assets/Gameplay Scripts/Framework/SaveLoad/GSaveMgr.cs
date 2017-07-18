@@ -84,7 +84,7 @@ namespace GameFramework
         public static string GetSaveFilePath(int in_iSaveDataIndex)
         {
             // Error checking
-            if (in_iSaveDataIndex <= 0 || in_iSaveDataIndex > MaxSaveFileCount)
+            if (in_iSaveDataIndex < 0 || in_iSaveDataIndex > MaxSaveFileCount)
             {
                 GDebug.LogError("GetSaveFilePath: Invalid SaveData index - " + in_iSaveDataIndex);
                 return null;
@@ -112,7 +112,7 @@ namespace GameFramework
 
             try
             {
-                string json = JsonUtility.ToJson(in_saveData);
+                string json = JsonUtility.ToJson(in_saveData, true);
 
                 string filePath = GetSaveFilePath(in_saveData.SaveDataIndex);
 
@@ -184,11 +184,14 @@ namespace GameFramework
             else
             {
                 // Make sure DataPools are valid
-                if (toReturn.DataPools == null || toReturn.DataPools.Length != (int)DataPoolID.MAX_POOL_IDS)
-                {
-                    // TODO If the data is invalid, should we cancel loading the file? Reset the save data?
-                }
+                //if (toReturn.DataPools == null || toReturn.DataPools.Length != (int)DataPoolID.MAX_POOL_IDS)
+                //{
+                //    // TODO If the data is invalid, should we cancel loading the file? Reset the save data?
+                //}
             }
+
+            // Test incoming SaveData
+            //CDebug.Log(toReturn.ToString());
 
             #region Load (Old PlayerPrefs code)
             //Dictionary<string, object> objects = new Dictionary<string, object>();
@@ -318,9 +321,9 @@ namespace GameFramework
                     // Application.persistentDataPath is not known at compile time and must be called after program starts.
                     // That is why we cannot just assign the strings as consts.
 
-                    for (int i = 1; i <= MaxSaveFileCount; i++)
+                    for (int i = 0; i < MaxSaveFileCount; i++)
                     {
-                        _SaveDataPaths[i] = Application.persistentDataPath + "/SaveData" + i + ".json";
+                        _SaveDataPaths[i] = Application.persistentDataPath + "/SaveData" + (i + 1) + ".json";
                     }
 
                     // Make sure directories exists
@@ -335,7 +338,7 @@ namespace GameFramework
         private static string[] _SaveDataPaths = null;
 
         // Max number of files allowed
-        private static int MaxSaveFileCount = 3;
+        public static int MaxSaveFileCount = 3;
         #endregion
     }
 }

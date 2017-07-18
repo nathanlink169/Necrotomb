@@ -155,4 +155,16 @@ public class SaveData
     }
 
     #endregion
+
+    // Used for debugging
+    public override string ToString()
+    {
+        string message = string.Format("SaveData\nFile Index:{0}\nSecurity Clearance:{1}\nCurrent Save Point:{2}\nDataPools:\n", SaveDataIndex, SecurityClearance, CurrentSavePoint);
+        for (int i = 0; i < GSaveManager.MaxSaveFileCount; i++)
+        {
+            message += DataPools[i] + "\n";
+        }
+
+        return message;
+    }
 }
