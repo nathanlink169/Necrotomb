@@ -32,20 +32,22 @@ public class DatapadInteractable : BaseBehaviour, IInteractable
 [CustomEditor(typeof(DatapadInteractable))]
 public class DatapadInteractableInspector : Editor
 {
+    SerializedProperty DatapadAction;
+    SerializedProperty SecurityClearance;
+
+    private void OnEnable()
+    {
+        DatapadAction = serializedObject.FindProperty("DatapadAction");
+        SecurityClearance = serializedObject.FindProperty("SecurityClearance");
+    }
+
     public override void OnInspectorGUI()
     {
-        DatapadInteractable datapadInteractable = (DatapadInteractable)target;
+        EditorGUILayout.PropertyField(DatapadAction);
+        if (DatapadAction.enumValueIndex == (int)(eDatapadAction.ChangeSecurityClearance))
+            EditorGUILayout.PropertyField(SecurityClearance);
 
-        datapadInteractable.DatapadAction = (eDatapadAction)EditorGUILayout.EnumPopup("Datapad Action", datapadInteractable.DatapadAction);
-
-        switch (datapadInteractable.DatapadAction)
-        {
-            case eDatapadAction.ChangeSecurityClearance:
-                datapadInteractable.SecurityClearance = EditorGUILayout.IntField("Security Clearance To Unlock", datapadInteractable.SecurityClearance);
-                break;
-            default:
-                break;
-        }
+        serializedObject.ApplyModifiedProperties();
     }
 }
 

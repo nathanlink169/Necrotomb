@@ -57,20 +57,34 @@ public class AbilityUnlocker : BaseBehaviour
 [CustomEditor(typeof(AbilityUnlocker))]
 public class AbilityUnlockerInspector : Editor
 {
+    SerializedProperty AbilityType;
+    SerializedProperty WeaponType;
+    SerializedProperty IsAbility;
+    SerializedProperty IsUpgrade;
+
+    private void OnEnable()
+    {
+        AbilityType = serializedObject.FindProperty("AbilityType");
+        WeaponType = serializedObject.FindProperty("WeaponType");
+        IsAbility = serializedObject.FindProperty("IsAbility");
+        IsUpgrade = serializedObject.FindProperty("IsUpgrade");
+    }
+
     public override void OnInspectorGUI()
     {
-        AbilityUnlocker abilityUnlocker = (AbilityUnlocker)target;
+        serializedObject.Update();
+
         string[] options = new string[] { "Ability", "Weapon" };
-        abilityUnlocker.IsAbility = EditorGUILayout.Popup("Type", abilityUnlocker.IsAbility ? 0 : 1, options) == 0 ? true : false;
-        if (abilityUnlocker.IsAbility)
-        {
-            abilityUnlocker.AbilityType = (eAbilities)EditorGUILayout.EnumPopup("Ability", abilityUnlocker.AbilityType);
-        }
+        IsAbility.boolValue = EditorGUILayout.Popup("Type", IsAbility.boolValue ? 0 : 1, options) == 0 ? true : false;
+
+        if (IsAbility.boolValue)
+            EditorGUILayout.PropertyField(AbilityType);
         else
-        {
-            abilityUnlocker.WeaponType = (eWeaponTypes)EditorGUILayout.EnumPopup("Weapon", abilityUnlocker.WeaponType);
-        }
-        abilityUnlocker.IsUpgrade = EditorGUILayout.Toggle("Is Upgrade", abilityUnlocker.IsUpgrade);
+            EditorGUILayout.PropertyField(WeaponType);
+
+        EditorGUILayout.PropertyField(IsUpgrade);
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
 #endif

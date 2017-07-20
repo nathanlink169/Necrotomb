@@ -37,7 +37,11 @@ public class FirstPersonMovement : BaseBehaviour
         getInput(out m_vInput, out m_bIsSprinting);
         translateDirectionVector(out m_vMovementVector, m_vInput);
 
+#if UNITY_EDITOR
+        m_Rigidbody.MovePosition(transform.position + m_vMovementVector * Mathf.Lerp(WalkingSpeed, SprintingSpeed, m_bIsSprinting ? m_vInput.y : 0f) * Time.fixedDeltaTime * (Input.GetKey(KeyCode.LeftControl) ? 5 : 1));
+#else
         m_Rigidbody.MovePosition(transform.position + m_vMovementVector * Mathf.Lerp(WalkingSpeed, SprintingSpeed, m_bIsSprinting ? m_vInput.y : 0f) * Time.fixedDeltaTime);
+#endif
 
         if (m_bIsJumping)
         {
