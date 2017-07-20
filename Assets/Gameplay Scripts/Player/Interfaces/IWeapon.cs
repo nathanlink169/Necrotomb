@@ -1,4 +1,11 @@
-﻿public interface IWeapon
+﻿public enum eWeaponTypes
+{
+    Pistol,
+    REI,
+    GuidedRocket,
+}
+
+public interface IWeapon
 {
     void OnMainFireBegin();
     void OnMainFireContinue();
