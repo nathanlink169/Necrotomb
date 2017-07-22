@@ -9,27 +9,27 @@ namespace GameFramework
     public static class GSaveManager
     {
         #region Public Consts
-        public const string UNLOCKED_REI = "UNLOCKED_REI";
-        public const string UPGRADED_REI = "UPGRADED_REI";
-        public const string UNLOCKED_GUIDED_ROCKET = "UNLOCKED_GUIDED_ROCKET";
-        public const string UPGRADED_GUIDED_ROCKET = "UPGRADED_GUIDED_ROCKET";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_REI = "UNLOCKED_REI";
+        [System.Obsolete("This variable is obsolete")] public const string UPGRADED_REI = "UPGRADED_REI";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_GUIDED_ROCKET = "UNLOCKED_GUIDED_ROCKET";
+        [System.Obsolete("This variable is obsolete")] public const string UPGRADED_GUIDED_ROCKET = "UPGRADED_GUIDED_ROCKET";
 
-        public const string UNLOCKED_THRUST_JUMP = "UNLOCKED_THRUST_JUMP";
-        public const string UPGRADED_THRUST_JUMP = "UPGRADED_THRUST_JUMP";
-        public const string UNLOCKED_GRAPPLE_HOOK = "UNLOCKED_GRAPPLE_HOOK";
-        public const string UPGRADED_GRAPPLE_HOOK = "UPGRADED_GRAPPLE_HOOK";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_THRUST_JUMP = "UNLOCKED_THRUST_JUMP";
+        [System.Obsolete("This variable is obsolete")] public const string UPGRADED_THRUST_JUMP = "UPGRADED_THRUST_JUMP";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_GRAPPLE_HOOK = "UNLOCKED_GRAPPLE_HOOK";
+        [System.Obsolete("This variable is obsolete")] public const string UPGRADED_GRAPPLE_HOOK = "UPGRADED_GRAPPLE_HOOK";
 
-        public const string UNLOCKED_HEALTH_UPGRADE_1 = "UNLOCKED_HEALTH_UPGRADE_1";
-        public const string UNLOCKED_HEALTH_UPGRADE_2 = "UNLOCKED_HEALTH_UPGRADE_2";
-        public const string UNLOCKED_HEALTH_UPGRADE_3 = "UNLOCKED_HEALTH_UPGRADE_3";
-        public const string UNLOCKED_HEALTH_UPGRADE_4 = "UNLOCKED_HEALTH_UPGRADE_4";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_HEALTH_UPGRADE_1 = "UNLOCKED_HEALTH_UPGRADE_1";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_HEALTH_UPGRADE_2 = "UNLOCKED_HEALTH_UPGRADE_2";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_HEALTH_UPGRADE_3 = "UNLOCKED_HEALTH_UPGRADE_3";
+        [System.Obsolete("This variable is obsolete")] public const string UNLOCKED_HEALTH_UPGRADE_4 = "UNLOCKED_HEALTH_UPGRADE_4";
 
-        public const string DEATH_HINT_ACTIVATED = "DEATH_HINT_ACTIVATED";
-        public const string DEFEATED_BOSS = "DEFEATED_BOSS";
-        public const string SAVE_POINT = "SAFE_POINT";
-        public const string SECURITY_CLEARANCE = "SECURITY_CLEARANCE";
+        [System.Obsolete("This variable is obsolete")] public const string DEATH_HINT_ACTIVATED = "DEATH_HINT_ACTIVATED";
+        [System.Obsolete("This variable is obsolete")] public const string DEFEATED_BOSS = "DEFEATED_BOSS";
+        [System.Obsolete("This variable is obsolete")] public const string SAVE_POINT = "SAFE_POINT";
+        [System.Obsolete("This variable is obsolete")] public const string SECURITY_CLEARANCE = "SECURITY_CLEARANCE";
 
-        private const string SAVE_DATA_EXISTS = "EXISTS";
+        [System.Obsolete("This variable is obsolete")] private const string SAVE_DATA_EXISTS = "EXISTS";
 
         // The following flags represent bits that can be set in the save data.
         // For one-time collectibles in-game, give them an appropriate pool and a unique flag.
@@ -44,7 +44,7 @@ namespace GameFramework
         #endregion
 
         // Pool IDs
-        public enum DataPoolID
+        public enum eDataPoolID
         {
             UNIQUE_ITEMS,
             HEALTH_UPGRADES,
@@ -117,12 +117,12 @@ namespace GameFramework
                 string filePath = GetSaveFilePath(in_saveData.SaveDataIndex);
 
                 GDebug.Log("Saving game data to file: " + filePath);
-                
+
                 StreamWriter file = new StreamWriter(filePath);
                 file.WriteLine(json);
                 file.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 GDebug.LogError("Error writing file - " + SaveDataPaths[in_saveData.SaveDataIndex] + ":\n" + ex.Message);
             }
@@ -268,41 +268,14 @@ namespace GameFramework
         #endregion
 
         #region PlayerPrefs Saving
-        private static float GetFloat(string in_key)
-        {
-            return PlayerPrefs.GetFloat(in_key, -1f);
-        }
-        private static void SetFloat(string in_key, float in_value)
-        {
-            PlayerPrefs.SetFloat(in_key, in_value);
-        }
-
-        private static int GetInt(string in_key)
-        {
-            return PlayerPrefs.GetInt(in_key, -1);
-        }
-        private static void SetInt(string in_key, int in_value)
-        {
-            PlayerPrefs.SetInt(in_key, in_value);
-        }
-
-        private static string GetString(string in_key)
-        {
-            return PlayerPrefs.GetString(in_key, "");
-        }
-        private static void SetString(string in_key, string in_value)
-        {
-            PlayerPrefs.SetString(in_key, in_value);
-        }
-
-        private static bool GetBool(string in_key)
-        {
-            return (PlayerPrefs.GetInt(in_key, 0) == 1) ? true : false;
-        }
-        private static void SetBool(string in_key, bool in_value)
-        {
-            PlayerPrefs.SetInt(in_key, in_value ? 1 : 0);
-        }
+        [System.Obsolete("This function is obsolete")] private static float GetFloat(string in_key) { return PlayerPrefs.GetFloat(in_key, -1f); }
+        [System.Obsolete("This function is obsolete")] private static void SetFloat(string in_key, float in_value) { PlayerPrefs.SetFloat(in_key, in_value); }
+        [System.Obsolete("This function is obsolete")] private static int GetInt(string in_key) { return PlayerPrefs.GetInt(in_key, -1); }
+        [System.Obsolete("This function is obsolete")] private static void SetInt(string in_key, int in_value) { PlayerPrefs.SetInt(in_key, in_value); }
+        [System.Obsolete("This function is obsolete")] private static string GetString(string in_key) { return PlayerPrefs.GetString(in_key, ""); }
+        [System.Obsolete("This function is obsolete")] private static void SetString(string in_key, string in_value) { PlayerPrefs.SetString(in_key, in_value); }
+        [System.Obsolete("This function is obsolete")] private static bool GetBool(string in_key) { return (PlayerPrefs.GetInt(in_key, 0) == 1) ? true : false; }
+        [System.Obsolete("This function is obsolete")] private static void SetBool(string in_key, bool in_value) { PlayerPrefs.SetInt(in_key, in_value ? 1 : 0); }
         #endregion
 
         #region Generated Save File Paths

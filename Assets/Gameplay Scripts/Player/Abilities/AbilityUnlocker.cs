@@ -27,12 +27,12 @@ public class AbilityUnlocker : BaseBehaviour
             switch (AbilityType)
             {
                 case eAbilities.ThrustJump:
-                    if (IsUpgrade) saveData.UpgradedThrustJump = true;
-                    else saveData.UnlockedThrustJump = true;
+                    if (IsUpgrade) saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_THRUST_JUMP_FLAG);
+                    else saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_THRUST_JUMP_FLAG);
                     break;
                 case eAbilities.GrappleHook:
-                    if (IsUpgrade) saveData.UpgradedGrappleHook = true;
-                    else saveData.UnlockedGrappleHook = true;
+                    if (IsUpgrade) saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_GRAPPLE_HOOK_FLAG);
+                    else saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GRAPPLE_HOOK_FLAG);
                     break;
             }
         }
@@ -41,12 +41,12 @@ public class AbilityUnlocker : BaseBehaviour
             switch (WeaponType)
             {
                 case eWeaponTypes.REI:
-                    if (IsUpgrade) saveData.UpgradedREI = true;
-                    else saveData.UnlockedREI = true;
+                    if (IsUpgrade) saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_REI_FLAG);
+                    else saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_REI_FLAG);
                     break;
                 case eWeaponTypes.GuidedRocket:
-                    if (IsUpgrade) saveData.UpgradedGuidedRocket = true;
-                    else saveData.UnlockedGuidedRocket = true;
+                    if (IsUpgrade) saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_GUIDED_ROCKET_FLAG);
+                    else saveData.SetItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GUIDED_ROCKET_FLAG);
                     break;
             }
         }

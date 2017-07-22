@@ -22,51 +22,51 @@ public class SaveData
     // Unique items
     public bool UnlockedREI
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_REI_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_REI_FLAG); }
     }
     public bool UpgradedREI
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_REI_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_REI_FLAG); }
     }
     public bool UnlockedGuidedRocket
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GUIDED_ROCKET_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GUIDED_ROCKET_FLAG); }
     }
     public bool UpgradedGuidedRocket
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_REI_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_REI_FLAG); }
     }
     public bool UnlockedThrustJump
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_THRUST_JUMP_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_THRUST_JUMP_FLAG); }
     }
     public bool UpgradedThrustJump
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_THRUST_JUMP_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_THRUST_JUMP_FLAG); }
     }
     public bool UnlockedGrappleHook
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GRAPPLE_HOOK_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UNLOCKED_GRAPPLE_HOOK_FLAG); }
     }
     public bool UpgradedGrappleHook
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_GRAPPLE_HOOK_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.UNIQUE_ITEMS, GSaveManager.UPGRADED_GRAPPLE_HOOK_FLAG); }
     }
 
     // Story event triggers
     public bool DeathHintActivated
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.STORY_EVENTS, GSaveManager.DEATH_HINT_ACTIVATED_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.STORY_EVENTS, GSaveManager.DEATH_HINT_ACTIVATED_FLAG); }
     }
     public bool DefeatedBoss
     {
-        get { return UnlockedItem(GSaveManager.DataPoolID.STORY_EVENTS, GSaveManager.DEFEATED_BOSS_FLAG); }
+        get { return UnlockedItem(GSaveManager.eDataPoolID.STORY_EVENTS, GSaveManager.DEFEATED_BOSS_FLAG); }
     }
 
     // Health upgrades
     public bool UnlockedHealthUpgrade(int in_iDataFlag)
     {
-        return (UnlockedItem(GSaveManager.DataPoolID.HEALTH_UPGRADES, in_iDataFlag));
+        return (UnlockedItem(GSaveManager.eDataPoolID.HEALTH_UPGRADES, in_iDataFlag));
     }
     //public bool HealthUpgrade1 = false;
     //public bool HealthUpgrade2 = false;
@@ -82,7 +82,7 @@ public class SaveData
     /// <param name="in_iDataPool"></param>
     /// <param name="in_iDataFlag"></param>
     /// <returns></returns>
-    public bool UnlockedItem(GSaveManager.DataPoolID in_iDataPool, int in_iDataFlag)
+    public bool UnlockedItem(GSaveManager.eDataPoolID in_iDataPool, int in_iDataFlag)
     {
         if (in_iDataPool < 0 || (int)in_iDataPool >= DataPools.Length)
             return false;
@@ -98,7 +98,7 @@ public class SaveData
     /// </summary>
     /// <param name="in_iDataPool"></param>
     /// <param name="in_iDataFlag"></param>
-    public void SetItem(GSaveManager.DataPoolID in_iDataPool, int in_iDataFlag)
+    public void SetItem(GSaveManager.eDataPoolID in_iDataPool, int in_iDataFlag)
     {
         if (in_iDataPool < 0 || (int)in_iDataPool >= DataPools.Length)
             return;
@@ -141,7 +141,7 @@ public class SaveData
 
         if (DataPools == null)
         {
-            DataPools = new int[(int)GSaveManager.DataPoolID.MAX_POOL_IDS];
+            DataPools = new int[(int)GSaveManager.eDataPoolID.MAX_POOL_IDS];
         }
 
         for (int i = 0; i < DataPools.Length; i++)
