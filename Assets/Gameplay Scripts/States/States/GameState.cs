@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Levels
+public enum eLevels
 {
     LevelM,
     Level1,
@@ -17,7 +17,7 @@ public class GameState : BaseState
     public const string STATE_NAME = "GameState";
 
     public GameObject Player;
-    public StateMachine<Levels> StateMachine;
+    public StateMachine<eLevels> StateMachine;
     public AudioSource BGM;
     public AudioClip LevelMBGM;
     public AudioClip Level1BGM;
@@ -29,7 +29,7 @@ public class GameState : BaseState
         _stateInfo = new StateInfo(STATE_NAME, this);
         base.Start();
 
-        StateMachine = StateMachine<Levels>.Initialize(this);
+        StateMachine = StateMachine<eLevels>.Initialize(this);
 
         LoadPoint loadPoint = GPlayerManager.Instance.PlayerData.CurrentSavePoint;
         switch (loadPoint)
@@ -75,6 +75,45 @@ public class GameState : BaseState
     }
     #endregion
 
+    #region Public
+    public void TransferPlayer(LoadPoint in_LoadPoint)
+    {
+        switch (in_LoadPoint)
+        {
+            case LoadPoint.AreaMRoom1:
+                activateLevel(0);
+                Player.transform.position = AreaMRoom1_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.AreaMRoom4:
+                activateLevel(0);
+                Player.transform.position = AreaMRoom4_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.AreaMRoom11:
+                activateLevel(0);
+                Player.transform.position = AreaMRoom11_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.Area1Room1:
+                activateLevel(1);
+                Player.transform.position = Area1Room1_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.Area1Room2:
+                activateLevel(1);
+                Player.transform.position = Area1Room2_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.Area1Room8:
+                activateLevel(1);
+                Player.transform.position = Area1Room8_SpawnPoint.transform.position;
+                break;
+            case LoadPoint.Area1Room15:
+                activateLevel(1);
+                Player.transform.position = Area1Room15_SpawnPoint.transform.position;
+                break;
+            default:
+                break;
+        }
+    }
+    #endregion
+
     #region StateMachine
     private void LevelM_Enter()
     {
@@ -84,6 +123,7 @@ public class GameState : BaseState
 
         BGM.clip = LevelMBGM;
         BGM.Play();
+        GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level1_Enter()
     {
@@ -93,6 +133,7 @@ public class GameState : BaseState
 
         BGM.clip = Level1BGM;
         BGM.Play();
+        GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level2_Enter()
     {
@@ -102,6 +143,7 @@ public class GameState : BaseState
 
         BGM.clip = Level2BGM;
         BGM.Play();
+        GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level3_Enter() { }
     private void Level4_Enter() { }
@@ -119,6 +161,8 @@ public class GameState : BaseState
     public GameObject CurrentSpawnPoint;
     public GameObject AreaMRoom1_SpawnPoint;
     public GameObject AreaMRoom4_SpawnPoint;
+    public GameObject AreaMRoom11_SpawnPoint;
+    public GameObject Area1Room1_SpawnPoint;
     public GameObject Area1Room2_SpawnPoint;
     public GameObject Area1Room8_SpawnPoint;
     public GameObject Area1Room15_SpawnPoint;
@@ -130,13 +174,13 @@ public class GameState : BaseState
         switch (in_iLevelID)
         {
             case 0:
-                StateMachine.ChangeState(Levels.LevelM);
+                StateMachine.ChangeState(eLevels.LevelM);
                 break;
             case 1:
-                StateMachine.ChangeState(Levels.Level1);
+                StateMachine.ChangeState(eLevels.Level1);
                 break;
             case 2:
-                StateMachine.ChangeState(Levels.Level2);
+                StateMachine.ChangeState(eLevels.Level2);
                 break;
         }
     }

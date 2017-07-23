@@ -26,7 +26,12 @@ public class CheckForInteractable : BaseBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                rHit.transform.GetComponent<IInteractable>().OnInteract();
+                IInteractable interactable = rHit.transform.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    if (interactable.IsInteractable())
+                        interactable.OnInteract();
+                }
             }
 
             if (!m_bPreviouslyHovering)

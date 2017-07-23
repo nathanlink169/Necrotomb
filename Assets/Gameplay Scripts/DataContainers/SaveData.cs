@@ -62,6 +62,10 @@ public class SaveData
     {
         get { return UnlockedItem(GSaveManager.eDataPoolID.STORY_EVENTS, GSaveManager.DEFEATED_BOSS_FLAG); }
     }
+    public bool ActivatedElevatorM
+    {
+        get { return UnlockedItem(GSaveManager.eDataPoolID.STORY_EVENTS, GSaveManager.ACTIVATED_ELEVATOR_M); }
+    }
 
     // Health upgrades
     public bool UnlockedHealthUpgrade(int in_iDataFlag)

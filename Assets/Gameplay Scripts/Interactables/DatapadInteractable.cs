@@ -17,6 +17,16 @@ public class DatapadInteractable : BaseBehaviour, IInteractable
     public eDatapadAction DatapadAction = eDatapadAction.ChangeSecurityClearance;
     public int SecurityClearance = 0;
 
+    public bool IsInteractable()
+    {
+        switch (DatapadAction)
+        {
+            case eDatapadAction.ChangeSecurityClearance:
+            default:
+                return true;
+        }
+    }
+
     public void OnInteract()
     {
         // TODO: Play Sound

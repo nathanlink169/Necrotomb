@@ -4,11 +4,13 @@ using UnityEngine;
 
 public enum LoadPoint : int
 {
-    AreaMRoom1 = 0,
-    AreaMRoom4 = 1,
-    Area1Room2 = 2,
-    Area1Room8 = 3,
-    Area1Room15 = 4
+    AreaMRoom1,
+    AreaMRoom4,
+    AreaMRoom11,
+    Area1Room1,
+    Area1Room2,
+    Area1Room8,
+    Area1Room15,
 }
 
 public class SavePoint : MonoBehaviour

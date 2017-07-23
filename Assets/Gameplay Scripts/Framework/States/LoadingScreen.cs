@@ -21,6 +21,8 @@ namespace GameFramework
         public delegate void LoadingScreenDelegate();
 
         #region Public
+        public Transform BaseObject = null;
+
         // Public methods.
         public void LoadLevel(string in_loadingLevelName, bool in_isLoadingAdditive, eEffect in_effect, LoadingScreenDelegate in_onLoadingBegin, LoadingScreenDelegate in_onLoadingEnd)
         {
@@ -36,7 +38,7 @@ namespace GameFramework
             {
                 case eEffect.Black:
                     {
-                        m_black.gameObject.SetActive(true);
+                        BaseObject.gameObject.SetActive(true);
                         ChangeLoadingState();
                     }
                     break;
@@ -54,13 +56,6 @@ namespace GameFramework
         #endregion
 
         #region Monobehaviour
-        // Monobehaviour methods.
-        private void Awake()
-        {
-            ChangeState(eState.Invalid);
-            m_black = transform.Find("Black");
-        }
-
         private void Update()
         {
             m_fStateTimer += Time.deltaTime;
@@ -116,11 +111,13 @@ namespace GameFramework
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            if (m_black) Destroy(m_black.gameObject);
+            if (BaseObject) Destroy(BaseObject.gameObject);
         }
         #endregion
         private void ChangeState(eState in_state)
         {
+            if (gameObject.activeInHierarchy == false)
+                gameObject.SetActive(true);
             StartCoroutine(StateChangeAfterTick(in_state));
         }
 
@@ -313,7 +310,7 @@ namespace GameFramework
 
         private void Hide()
         {
-            m_black.gameObject.SetActive(false);
+            BaseObject.gameObject.SetActive(false);
         }
 
         private void ChangeLoadingState()
@@ -340,8 +337,6 @@ namespace GameFramework
 
         private int m_iDummyTick = 0;
         private bool m_bLoadingAdditive = false;
-
-        private Transform m_black = null;
 
         private string m_sLoadingLevelName = "";
 

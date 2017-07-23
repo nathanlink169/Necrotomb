@@ -24,6 +24,11 @@ public class KeypadInteractable : BaseBehaviour, IInteractable
         m_bIsActivated = !m_bIsActivated;
         setColours();
     }
+
+    public bool IsInteractable()
+    {
+        return true;
+    }
     #endregion
 
     #region Private

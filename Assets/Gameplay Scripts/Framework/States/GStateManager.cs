@@ -424,23 +424,23 @@ namespace GameFramework
             bool bToReturn = false;
             // create it for the first time
             // TODO: make this into a setter, so that GStateManager stays generic
-            if (in_value && m_loadingSpinner == null)
+            if (in_value && m_loadingScreen == null)
             {
-                m_loadingSpinner = GEntityFactory.Instance.CreateResourceAtPath("Prefabs/UI/LoadingSpinner", null).GetComponent<Transform>();
-                DontDestroyOnLoad(m_loadingSpinner.gameObject);
+                m_loadingScreen = GEntityFactory.Instance.CreateResourceAtPath("Prefabs/UI/LoadingSpinner", null).GetComponent<LoadingScreen>();
+                DontDestroyOnLoad(m_loadingScreen.gameObject);
             }
 
-            if (m_loadingSpinner != null)
+            if (m_loadingScreen != null)
             {
                 // show it
-                if (in_value && !m_loadingSpinner.gameObject.activeSelf)
+                if (in_value && !m_loadingScreen.gameObject.activeSelf)
                 {
-                    m_loadingSpinner.gameObject.SetActive(in_value);
+                    m_loadingScreen.gameObject.SetActive(in_value);
                 }
                 // disable it
-                else if (!in_value && m_loadingSpinner.gameObject.activeSelf)
+                else if (!in_value && m_loadingScreen.gameObject.activeSelf)
                 {
-                    m_loadingSpinner.gameObject.SetActive(in_value);
+                    m_loadingScreen.gameObject.SetActive(in_value);
                 }
             }
             return bToReturn;
@@ -468,7 +468,7 @@ namespace GameFramework
         {
             if (m_loadingScreen == null)
             {
-                GameObject loadingScreen = GEntityFactory.Instance.CreateResourceAtPath("Prefabs/UI/LoadingScreen", transform);
+                GameObject loadingScreen = GEntityFactory.Instance.CreateResourceAtPath("Prefabs/UI/LoadingSpinner", transform);
                 m_loadingScreen = loadingScreen.GetComponent<LoadingScreen>();
             }
         }
@@ -629,7 +629,6 @@ namespace GameFramework
         private float m_fOriginalRealTimeSinceStartupSubState = 0f;
 
         private LoadingScreen m_loadingScreen = null;
-        private Transform m_loadingSpinner = null;
         private LoadingScreen.eEffect m_loadingEffect = LoadingScreen.eEffect.Invalid;
         #endregion
     }

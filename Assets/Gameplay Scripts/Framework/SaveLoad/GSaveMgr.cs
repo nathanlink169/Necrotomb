@@ -53,24 +53,25 @@ namespace GameFramework
         }
 
         // Unique item pool
-        public const int UNLOCKED_REI_FLAG =            1 << 0;
-        public const int UPGRADED_REI_FLAG =            1 << 1;
-        public const int UNLOCKED_GUIDED_ROCKET_FLAG =  1 << 2;
-        public const int UPGRADED_GUIDED_ROCKET_FLAG =  1 << 3;
-        public const int UNLOCKED_THRUST_JUMP_FLAG =    1 << 4;
-        public const int UPGRADED_THRUST_JUMP_FLAG =    1 << 5;
-        public const int UNLOCKED_GRAPPLE_HOOK_FLAG =   1 << 6;
-        public const int UPGRADED_GRAPPLE_HOOK_FLAG =   1 << 7;
+        public const int UNLOCKED_REI_FLAG = 1 << 0;
+        public const int UPGRADED_REI_FLAG = 1 << 1;
+        public const int UNLOCKED_GUIDED_ROCKET_FLAG = 1 << 2;
+        public const int UPGRADED_GUIDED_ROCKET_FLAG = 1 << 3;
+        public const int UNLOCKED_THRUST_JUMP_FLAG = 1 << 4;
+        public const int UPGRADED_THRUST_JUMP_FLAG = 1 << 5;
+        public const int UNLOCKED_GRAPPLE_HOOK_FLAG = 1 << 6;
+        public const int UPGRADED_GRAPPLE_HOOK_FLAG = 1 << 7;
 
         // Health upgrade pool
-        public const int HEALTH_UPGRADE_1_FLAG =        1 << 0;
-        public const int HEALTH_UPGRADE_2_FLAG =        1 << 1;
-        public const int HEALTH_UPGRADE_3_FLAG =        1 << 2;
-        public const int HEALTH_UPGRADE_4_FLAG =        1 << 3;
+        public const int HEALTH_UPGRADE_1_FLAG = 1 << 0;
+        public const int HEALTH_UPGRADE_2_FLAG = 1 << 1;
+        public const int HEALTH_UPGRADE_3_FLAG = 1 << 2;
+        public const int HEALTH_UPGRADE_4_FLAG = 1 << 3;
 
         // Story event pool
-        public const int DEATH_HINT_ACTIVATED_FLAG =    1 << 0;
-        public const int DEFEATED_BOSS_FLAG =           1 << 1;
+        public const int DEATH_HINT_ACTIVATED_FLAG = 1 << 0;
+        public const int DEFEATED_BOSS_FLAG = 1 << 1;
+        public const int ACTIVATED_ELEVATOR_M = 1 << 2;
 
         #endregion
 
