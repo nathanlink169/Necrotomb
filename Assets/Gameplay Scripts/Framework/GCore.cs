@@ -66,7 +66,7 @@ namespace GameFramework
             GPlayerHealth.Instance.EmptyStartup();
             yield return YieldFactory.GetWaitForEndOfFrame();
 
-            AudioMixerManager.Instance.EmptyStartup();
+            GAudioManager.Instance.EmptyStartup();
             yield return YieldFactory.GetWaitForEndOfFrame();
 
             m_bInitialized = true;

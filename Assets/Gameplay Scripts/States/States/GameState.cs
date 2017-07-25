@@ -18,7 +18,6 @@ public class GameState : BaseState
 
     public GameObject Player;
     public StateMachine<eLevels> StateMachine;
-    public AudioSource BGM;
     public AudioClip LevelMBGM;
     public AudioClip Level1BGM;
     public AudioClip Level2BGM;
@@ -121,8 +120,7 @@ public class GameState : BaseState
         Area1.SetActive(false);
         Area2.SetActive(false);
 
-        BGM.clip = LevelMBGM;
-        BGM.Play();
+        GAudioManager.Instance.PlayBGM(LevelMBGM);
         GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level1_Enter()
@@ -131,8 +129,7 @@ public class GameState : BaseState
         Area1.SetActive(true);
         Area2.SetActive(false);
 
-        BGM.clip = Level1BGM;
-        BGM.Play();
+        GAudioManager.Instance.PlayBGM(Level1BGM);
         GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level2_Enter()
@@ -141,8 +138,7 @@ public class GameState : BaseState
         Area1.SetActive(false);
         Area2.SetActive(true);
 
-        BGM.clip = Level2BGM;
-        BGM.Play();
+        GAudioManager.Instance.PlayBGM(Level2BGM);
         GStateManager.Instance.EnableLoadingSpinner(false);
     }
     private void Level3_Enter() { }

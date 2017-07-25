@@ -7,7 +7,7 @@ public class LevelTransfer : BaseBehaviour
 {
     public LoadPoint ToTransferTo;
 
-    public void TransferLevel()
+    public virtual void TransferLevel()
     {
         GStateManager.Instance.EnableLoadingSpinner(true);
         (CurrentState as GameState).TransferPlayer(ToTransferTo);

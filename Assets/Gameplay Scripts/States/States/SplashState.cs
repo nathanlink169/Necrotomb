@@ -29,6 +29,7 @@ public class SplashState : BaseState
     #endregion
 
     #region Public
+    public AudioClip StartingMusic;
     public Image UnityLogo;
     public Image SomniplexLogo;
     #endregion
@@ -46,7 +47,10 @@ public class SplashState : BaseState
         GStateManager.Instance.ForceStateInfo(_stateInfo);
 
         yield return YieldFactory.GetWaitForFixedUpdate();
-        GCore.Instance.EnsureMgrsAreSetup();
+        GCore.Instance.EmptyStartup();
+
+        yield return YieldFactory.GetWaitForFixedUpdate();
+        GAudioManager.Instance.PlayBGM(StartingMusic);
 
         yield return YieldFactory.GetWaitForFixedUpdate();
         GStateManager.Instance.EnableLoadingSpinner(false);
