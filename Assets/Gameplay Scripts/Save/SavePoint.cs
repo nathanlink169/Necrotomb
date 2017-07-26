@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GameFramework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,18 +14,19 @@ public enum LoadPoint : int
     Area1Room15,
 }
 
-public class SavePoint : MonoBehaviour
+public class SavePoint : BaseBehaviour
 {
-
-    // Use this for initialization
-    void Start()
+    public void Save()
     {
-
+        GSaveManager.Save(GPlayerManager.Instance.PlayerData);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-
+        // TODO: Do this properly
+        if (other.CompareTag("Player"))
+        {
+            Save();
+        }
     }
 }

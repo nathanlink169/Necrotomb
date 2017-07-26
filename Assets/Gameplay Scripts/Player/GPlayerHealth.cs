@@ -16,12 +16,12 @@ namespace GameFramework
         {
             get
             {
-                return m_Upgrades;
-            }
-            set
-            {
-                m_Upgrades = value;
-                m_CurrentHealth.MaximumValue = STARTING_HEALTH + m_Upgrades * HEALTH_PER_UPGRADE;
+                SaveData saveData = GPlayerManager.Instance.PlayerData;
+                return 4 +
+                       (saveData.UnlockedHealthUpgrade(GSaveManager.HEALTH_UPGRADE_1_FLAG) ? 1 : 0) +
+                       (saveData.UnlockedHealthUpgrade(GSaveManager.HEALTH_UPGRADE_2_FLAG) ? 1 : 0) +
+                       (saveData.UnlockedHealthUpgrade(GSaveManager.HEALTH_UPGRADE_3_FLAG) ? 1 : 0) +
+                       (saveData.UnlockedHealthUpgrade(GSaveManager.HEALTH_UPGRADE_4_FLAG) ? 1 : 0);
             }
         }
         #endregion
@@ -60,7 +60,6 @@ namespace GameFramework
 
         #region Private
         private ClampedFloat m_CurrentHealth = new ClampedFloat(STARTING_HEALTH, 0.0f, STARTING_HEALTH);
-        private int m_Upgrades = 0;
         #endregion
     }
 }
