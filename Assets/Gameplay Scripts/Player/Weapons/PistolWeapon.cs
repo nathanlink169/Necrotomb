@@ -31,8 +31,6 @@ public class PistolWeapon : BaseBehaviour, IWeapon
 
         pProj.Fire(direction, SPEED);
         pProj.Damage = SINGLE_SHOT_DAMAGE;
-
-        //Debug.DrawLine(StartFirePoint.position, playerCamera.RaycastPoint, Color.cyan);
     }
 
     public void OnAltFireBegin()

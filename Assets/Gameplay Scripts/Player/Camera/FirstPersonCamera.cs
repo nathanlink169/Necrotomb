@@ -43,8 +43,7 @@ public class FirstPersonCamera : BaseBehaviour
 
     [Tooltip("Turn this on if the player should be able to look around while their player is stunned.")]
     public bool AllowRotationIfStunned = false;
-
-    [HideInInspector]
+    
     // Gets a point along the forward vector of the camera where the first raycast collision is.
     public Vector3 RaycastPoint
     {
@@ -53,7 +52,7 @@ public class FirstPersonCamera : BaseBehaviour
     protected Vector3 _RaycastPoint;
 
     [Tooltip("Use this to control how far the camera raycast will travel")]
-    public float RaycastPointHitRange = 1000.0f;
+    public float RaycastPointHitRange = 500.0f;
 
     [Tooltip("Setting a minimum value will prevent odd gun rotation issues")]
     public float RaycastPointHitMinCutoff = 5.0f;
@@ -114,18 +113,15 @@ public class FirstPersonCamera : BaseBehaviour
         {
             _RaycastPoint = transform.position + transform.forward * RaycastPointHitRange;
         }
-        // Don't make the RaycastPoint too close or the gun will rotate too extremely
         float RaycastDistance = Vector3.Distance(transform.position, _RaycastPoint);
         if (RaycastDistance < RaycastPointHitMinCutoff)
         {
             _RaycastPoint = transform.position + transform.forward * RaycastPointHitMinCutoff;
         }
-
-        //Debug.DrawLine(transform.position, _RaycastPoint, Color.red);
+        
         GameObject weapon = GPlayerManager.Instance.PlayerWeaponManager.GetCurrentWeaponGameObject();
         if (weapon != null)
         {
-            // Make the weapon face the hit point of the camera raycast
             weapon.transform.LookAt(RaycastPoint);
 
             // Correct angle
