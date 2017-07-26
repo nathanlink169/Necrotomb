@@ -27,10 +27,21 @@ public class GPlayerManager : SingletonBehaviour<GPlayerManager>
     }
     public GPlayerHealth Health { get { return GPlayerHealth.Instance; } }
     public SaveData PlayerData { get; set; }
+
+    public WeaponManager PlayerWeaponManager
+    {
+        get
+        {
+            if (m_PlayerWeaponManager == null)
+                m_PlayerWeaponManager = PlayerObject.GetComponentInChildren<WeaponManager>();
+            return m_PlayerWeaponManager;
+        }
+    }
     #endregion
 
     #region Private
     GameObject m_PlayerObject = null;
     Camera m_PlayerMainCamera = null;
+    WeaponManager m_PlayerWeaponManager = null;
     #endregion
 }
