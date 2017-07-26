@@ -107,7 +107,7 @@ public class SaveData
         if (in_iDataPool < 0 || (int)in_iDataPool >= DataPools.Length)
             return;
 
-        DataPools[(int)in_iDataPool] |= 1 << in_iDataFlag;
+        DataPools[(int)in_iDataPool] |= in_iDataFlag;
     }
 
     /// <summary>
