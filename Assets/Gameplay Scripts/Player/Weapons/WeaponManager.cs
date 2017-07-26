@@ -22,6 +22,21 @@ public class WeaponManager : BaseBehaviour
         }
     }
     public IWeapon CurrentWeapon { get { return Weapons[CurrentSelectedWeapon]; } }
+
+    public GameObject GetCurrentWeaponGameObject()
+    {
+        GameObject weaponObject = null;
+
+        if (m_WeaponObjects != null && m_WeaponObjects.Count > 0)
+        {
+            if (CurrentSelectedWeapon >= 0 && CurrentSelectedWeapon < m_WeaponObjects.Count)
+            {
+                weaponObject = m_WeaponObjects[CurrentSelectedWeapon];
+            }
+        }
+
+        return weaponObject;
+    }
     #endregion
 
     #region Monobehaviour

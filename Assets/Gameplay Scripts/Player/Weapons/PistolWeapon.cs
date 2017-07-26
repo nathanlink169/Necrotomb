@@ -22,7 +22,14 @@ public class PistolWeapon : BaseBehaviour, IWeapon
     {
         GameObject gObject = GPoolManager.Instance.Get(PistolProjectile, StartFirePoint.position, Quaternion.identity, true);
         PistolProjectile pProj = gObject.GetComponent<PistolProjectile>();
-        pProj.Fire(StartFirePoint.forward, SPEED);
+
+        // Aim the bullet towards the camera's raycast hit point.
+        // Just using the forward vector would cause inaccuracies at far range targets.
+        FirstPersonCamera playerCamera = GPlayerManager.Instance.PlayerMainCamera.GetComponent<FirstPersonCamera>();
+
+        Vector3 direction = playerCamera.RaycastPoint - StartFirePoint.position;
+
+        pProj.Fire(direction, SPEED);
         pProj.Damage = SINGLE_SHOT_DAMAGE;
     }
 
